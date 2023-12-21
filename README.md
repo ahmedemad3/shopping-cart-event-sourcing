@@ -102,19 +102,21 @@ The application will start, and you can access the API at `http://localhost:8080
 
   Parameters
   customerId (path): The ID of the customer.
-  Response
+ - **Output:**
   200 OK with the customer's cart and aggregations.
   404 Not Found if the customer or cart is not found.
 
 ### Get Customer Cart with Denormalization
+```http
 GET /carts/{customerId}
 Retrieves the customer's cart without aggregations.
 
   Parameters
   customerId (path): The ID of the customer.
-  Response
+ - **Output:**
   200 OK with the customer's cart.
   404 Not Found if the customer or cart is not found.
+
 ## Notes
 
 - This is a basic example, and you may need to customize the logic based on your business rules and requirements.
