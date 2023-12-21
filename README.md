@@ -3,6 +3,27 @@
 
 This Java Spring Boot application demonstrates an implementation of event sourcing for a shopping cart with a PostgreSQL DB table.
 
+## Denormalization Technique
+
+In the context of this project, denormalization refers to the process of simplifying data retrieval by storing redundant copies of certain information. It is particularly useful when dealing with read-heavy workloads, as it optimizes query performance at the expense of some redundancy in the data.
+
+### Denormalized Table
+
+A denormalized table is used to aggregate and store cart-related events, making it easier and faster to query the current state of a shopping cart. The denormalized table is designed to reduce the need for complex joins and calculations when retrieving cart information.
+
+### Benefits
+
+1. **Improved Query Performance**: Denormalization reduces the need for joins and aggregations during read operations, leading to faster query execution.
+
+2. **Simplified Query Logic**: With denormalized data, the query logic becomes simpler, as the necessary information is readily available in a single table.
+
+3. **Efficient Retrieval of Latest State**: The chronological reduction process is facilitated by the denormalized table, enabling efficient retrieval of the latest state of a shopping cart.
+
+### Considerations
+
+While denormalization offers performance benefits for read operations, it comes with the trade-off of increased storage space and the need for careful management to keep redundant data consistent.
+
+
 ## Project Structure
 
 The project is organized as follows:
