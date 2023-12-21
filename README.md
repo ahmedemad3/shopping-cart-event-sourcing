@@ -3,7 +3,9 @@
 
 This Java Spring Boot application demonstrates an implementation of event sourcing for a shopping cart with a PostgreSQL DB table.
 
-## Denormalization Technique
+## 1st Chronological Reductions with java code
+
+## 2nd Denormalization Technique
 
 In the context of this project, denormalization refers to the process of simplifying data retrieval by storing redundant copies of certain information. It is particularly useful when dealing with read-heavy workloads, as it optimizes query performance at the expense of some redundancy in the data.
 
@@ -22,6 +24,7 @@ A denormalized table is used to aggregate and store cart-related events, making 
 ### Considerations
 
 While denormalization offers performance benefits for read operations, it comes with the trade-off of increased storage space and the need for careful management to keep redundant data consistent.
+
 
 
 ## Project Structure
@@ -91,10 +94,27 @@ The application will start, and you can access the API at `http://localhost:8080
   ```
 - **Output:** Status code `201` (Created)
 
-### Add Other Cart Events
+### Get Customer Cart with Aggregations
 
-- Similar endpoints for other cart events (remove from cart, update quantity, clear cart, etc.).
+```http
+  GET /carts/aggregation/{customerId}
+  Retrieves the customer's cart with aggregations, including total quantity and price.
 
+  Parameters
+  customerId (path): The ID of the customer.
+  Response
+  200 OK with the customer's cart and aggregations.
+  404 Not Found if the customer or cart is not found.
+
+### Get Customer Cart with Denormalization
+GET /carts/{customerId}
+Retrieves the customer's cart without aggregations.
+
+  Parameters
+  customerId (path): The ID of the customer.
+  Response
+  200 OK with the customer's cart.
+  404 Not Found if the customer or cart is not found.
 ## Notes
 
 - This is a basic example, and you may need to customize the logic based on your business rules and requirements.
