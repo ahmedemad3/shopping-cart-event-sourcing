@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 import eg.com.eventsouring.shoppingcart.model.Cart;
 import eg.com.eventsouring.shoppingcart.model.CartEvent;
 import eg.com.eventsouring.shoppingcart.repository.CartEventRepository;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class CartEventService {
 
 	private final CartEventRepository cartEventRepository;
@@ -29,6 +31,7 @@ public class CartEventService {
 
 	public Cart getCustomerCart(Long customerId) {
 		List<CartEvent> cartEvents = getCartEventsByCustomerId(customerId);
+		log.info("cartEvents : size " + cartEvents.size());
 		Cart cart = new Cart(customerId);
 		cartEvents.forEach(cartEvent -> cart.processEvent(cartEvent));
 		return cart;

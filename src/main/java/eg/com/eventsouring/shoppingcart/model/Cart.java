@@ -49,11 +49,14 @@ public class Cart {
 			CartItem cartItem = cartItems.get(existingItemIndex);
 			if (cartItem != null) {
 				cartItem.setQuantity(cartEvent.getQuantity());
+				cartItem.setPrice(cartEvent.getPrice());
 			}
 		}
 	}
 
 	private void handleRemoveFromCartEvent(CartEvent cartEvent) {
+		log.info("handleRemoveFromCartEvent : " + cartEvent.getEventType() + " , Item_ID : " + cartEvent.getItemId()
+				+ " , Quantity : " + cartEvent.getQuantity());
 		cartItems.removeIf(item -> item.getItemId().equals(cartEvent.getItemId()));
 	}
 
