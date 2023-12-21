@@ -136,6 +136,41 @@ Feel free to explore these APIs and adapt them based on your specific needs. The
 
 These additions provide documentation for the new APIs, including details about their endpoints and expected responses. Update the information as needed for your specific project and use case.
 
+Certainly! Below is the addition to the README file:
+
+```markdown
+# Shopping Cart Event Source Project
+
+...
+
+## Database Scripts
+-- this path src\main\resources\DB_script have the following scripts
+
+### Update Cart Item Function
+
+Run the following SQL script to create the `update_cart_item` function:
+
+```SQL
+-- update_cartitem_fn.sql
+-- This script creates the 'update_cart_item' function.
+
+### Database Creation Script
+
+Run the following SQL script to create the necessary tables for the project:
+
+```SQL
+-- db-create.sql
+-- This script creates the required database tables.
+
+Ensure that you execute the scripts in the specified order for the correct setup of the database tables and functions.
+
+...
+
+Feel free to adapt the script names and content based on your specific database setup and requirements.
+```
+
+These additions provide documentation for running the database scripts in the correct order. Adjust the script names and content as needed for your project.
+
 ## Notes
 
 - This is a basic example, and you may need to customize the logic based on your business rules and requirements.
