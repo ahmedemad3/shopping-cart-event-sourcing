@@ -133,8 +133,6 @@ GET /api/v1/carts/{customerId}
 
 Feel free to explore these APIs and adapt them based on your specific needs. The provided endpoints allow you to retrieve a customer's cart with and without aggregations, providing flexibility based on the use case.
 ```
-# Shopping Cart Event Source Project
-
 ## Database Scripts
 -- this path src\main\resources\DB_script have the following scripts
 
