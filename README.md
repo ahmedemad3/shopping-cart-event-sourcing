@@ -94,6 +94,47 @@ The application will start, and you can access the API at `http://localhost:8080
   ```
 - **Output:** Status code `201` (Created)
 
+Certainly! Below are the additions for the README file to document the new APIs:
+
+```markdown
+# Shopping Cart Event Source Project
+
+...
+
+## APIs
+
+### Get Customer Cart with Aggregations
+
+Retrieve a customer's cart with aggregations, including calculated quantities and prices.
+
+**Endpoint:**
+```http
+GET /api/v1/carts/aggregation/{customerId}
+```
+
+**Response:**
+- HTTP Status 200 OK: Returns the customer's cart with aggregations.
+- HTTP Status 404 Not Found: If the customer's cart is not found.
+
+### Get Customer Cart
+
+Retrieve a customer's cart without aggregations.
+
+**Endpoint:**
+```http
+GET /api/v1/carts/{customerId}
+```
+
+**Response:**
+- HTTP Status 200 OK: Returns the customer's cart.
+- HTTP Status 404 Not Found: If the customer's cart is not found.
+
+...
+
+Feel free to explore these APIs and adapt them based on your specific needs. The provided endpoints allow you to retrieve a customer's cart with and without aggregations, providing flexibility based on the use case.
+```
+
+These additions provide documentation for the new APIs, including details about their endpoints and expected responses. Update the information as needed for your specific project and use case.
 
 ## Notes
 
