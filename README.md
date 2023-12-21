@@ -94,9 +94,9 @@ The application will start, and you can access the API at `http://localhost:8080
   ```
 - **Output:** Status code `201` (Created)
 
-## Get Customer Cart with Aggregations
+### Get Customer Cart with Aggregations
 
-```http
+```HTTP
   - **Endpoint:** GET /carts/aggregation/{customerId}
   - **Method:** GET
   Retrieves the customer's cart with aggregations, including total quantity and price.
@@ -104,20 +104,8 @@ The application will start, and you can access the API at `http://localhost:8080
   Parameters
   customerId (path): The ID of the customer.
  - **Output:**
-  200 OK with the customer's cart and aggregations.
-  404 Not Found if the customer or cart is not found.
-
-## Get Customer Cart with Denormalization
-```http
- - **Endpoint:** GET /carts/{customerId}
- - **Method:** GET
-Retrieves the customer's cart without aggregations.
-
-  Parameters
-  customerId (path): The ID of the customer.
- - **Output:**
-  200 OK with the customer's cart.
-  404 Not Found if the customer or cart is not found.
+  - 200 OK with the customer's cart and aggregations.
+  - 404 Not Found if the customer or cart is not found.
 
 ## Notes
 
