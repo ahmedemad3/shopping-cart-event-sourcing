@@ -94,7 +94,7 @@ The application will start, and you can access the API at `http://localhost:8080
   ```
 - **Output:** Status code `201` (Created)
 
-### Get Customer Cart with Aggregations
+# Get Customer Cart with Aggregations
 
 ```HTTP
   - **Endpoint:** GET /carts/aggregation/{customerId}
