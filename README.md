@@ -94,10 +94,11 @@ The application will start, and you can access the API at `http://localhost:8080
   ```
 - **Output:** Status code `201` (Created)
 
-### Get Customer Cart with Aggregations
+## Get Customer Cart with Aggregations
 
 ```http
-  GET /carts/aggregation/{customerId}
+  - **Endpoint:** GET /carts/aggregation/{customerId}
+  - **Method:** GET
   Retrieves the customer's cart with aggregations, including total quantity and price.
 
   Parameters
@@ -108,7 +109,8 @@ The application will start, and you can access the API at `http://localhost:8080
 
 ### Get Customer Cart with Denormalization
 ```http
-GET /carts/{customerId}
+ - **Endpoint:** GET /carts/{customerId}
+ - **Method:** GET
 Retrieves the customer's cart without aggregations.
 
   Parameters
