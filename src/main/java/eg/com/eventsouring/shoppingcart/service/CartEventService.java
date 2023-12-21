@@ -29,7 +29,7 @@ public class CartEventService {
 		cartEventRepository.save(cartEvent);
 	}
 
-	public Cart getCustomerCart(Long customerId) {
+	public Cart getCustomerCartWithAggregations(Long customerId) {
 		List<CartEvent> cartEvents = getCartEventsByCustomerId(customerId);
 		log.info("cartEvents : size " + cartEvents.size());
 		Cart cart = new Cart(customerId);

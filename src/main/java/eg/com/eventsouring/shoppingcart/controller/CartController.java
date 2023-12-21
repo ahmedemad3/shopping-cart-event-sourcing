@@ -16,16 +16,19 @@ import org.springframework.web.bind.annotation.RestController;
 import eg.com.eventsouring.shoppingcart.model.Cart;
 import eg.com.eventsouring.shoppingcart.model.CartEvent;
 import eg.com.eventsouring.shoppingcart.service.CartEventService;
+import eg.com.eventsouring.shoppingcart.service.CartService;
 
 @RestController
 @RequestMapping("/api/v1/cart")
 public class CartController {
 
 	private final CartEventService cartEventService;
+	private final CartService cartService;
 
 	@Autowired
-	public CartController(CartEventService cartEventService) {
+	public CartController(CartEventService cartEventService , CartService cartService) {
 		this.cartEventService = cartEventService;
+		this.cartService = cartService;
 	}
 
 	@GetMapping("/{customerId}/events")
@@ -41,9 +44,19 @@ public class CartController {
 		cartEventService.addCartEvent(cartEvent);
 	}
 
+	@GetMapping("/aggregation/{customerId}")
+	public ResponseEntity<Cart> getCustomerCartWithAggregations(@PathVariable Long customerId) {
+		Cart cart = cartEventService.getCustomerCartWithAggregations(customerId);
+		if (cart != null) {
+			return new ResponseEntity<>(cart, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
 	@GetMapping("/{customerId}")
 	public ResponseEntity<Cart> getCustomerCart(@PathVariable Long customerId) {
-		Cart cart = cartEventService.getCustomerCart(customerId);
+		Cart cart = cartService.getCustomerCart(customerId);
 		if (cart != null) {
 			return new ResponseEntity<>(cart, HttpStatus.OK);
 		} else {
