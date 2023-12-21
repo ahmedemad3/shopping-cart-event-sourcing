@@ -107,7 +107,7 @@ The application will start, and you can access the API at `http://localhost:8080
   200 OK with the customer's cart and aggregations.
   404 Not Found if the customer or cart is not found.
 
-### Get Customer Cart with Denormalization
+## Get Customer Cart with Denormalization
 ```http
  - **Endpoint:** GET /carts/{customerId}
  - **Method:** GET
