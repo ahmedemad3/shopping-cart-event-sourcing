@@ -1,4 +1,4 @@
-```markdown
+
 # Event Sourcing Shopping Cart Application
 
 This Java Spring Boot application demonstrates an implementation of event sourcing for a shopping cart with a PostgreSQL DB table.
